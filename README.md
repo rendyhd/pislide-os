@@ -2,13 +2,13 @@
 PiSlide OS is the simplest way to get photo slideshows working on a Raspberry Pi. It supports most common image formats (JPG, PNG, WEBP, AVIF, JXL, HEIF, HEIC, SVG, BMP, TIFF, and QOI) with plans for animated GIFs and maybe even videos in the future! 
 
 - Images are provided for all Raspberry Pis
-- It has currently been tested and works well on a Pi 0, 3, and 4.
+- It has currently been tested and works well on a 3, and 4.
 - We currently don't have all Pi revisions to test with, so if there are any issues, please let us know!
 
 ## Installation
 1. Go to the [releases](https://github.com/JarvyJ/pislide-os/releases) section in GitHub
 2. Download the latest release for your given Raspberry Pi
-3. Flash the image using the Raspberry Pi Imager](https://www.raspberrypi.com/software/operating-systems/) (or your imager of choice)
+3. Flash the image using the [Raspberry Pi Imager](https://www.raspberrypi.com/software/operating-systems/) (or your imager of choice)
     - Under "Operating System", choose "Use Custom" on the bottom of the list and select the image you downloaded
     - We currently do not support any customizations (ssh, wifi, etc)
 4. When flashing is complete, plug the SD card in and boot it up!
@@ -47,6 +47,10 @@ Sort = "natural"
 7. Eject the SD Card, re-insert it into your Raspberry Pi, and boot up!
 
 If all goes well, your new slideshow should be showing up on screen with the settings specified. If not, you should get an error message in big text on screen that hopefully helps solve the issue.
+
+## Current Issues
+- Images don't playback properly on a **Pi 0**. Once you add too many images to the slideshow, playback gets weird.
+- JPEG Exif metadata orientation doesn't work, so some images wont be rotated correctly when being displayed
 
 ## Good to know
 - Most of the operating system is setup as read-only (exception is a few configs and the cached resized images)
