@@ -1,0 +1,10 @@
+config BR2_PACKAGE_LIBRAYLIB
+	bool "libraylib"
+	depends on BR2_PACKAGE_HAS_LIBGLES
+	depends on BR2_PACKAGE_HAS_LIBEGL
+	depends on BR2_PACKAGE_HAS_LIBGBM
+	depends on BR2_PACKAGE_LIBDRM
+	help
+	  libraylib - A simple and easy-to-use library to enjoy videogames programming 
+
+	  http://www.raylib.com

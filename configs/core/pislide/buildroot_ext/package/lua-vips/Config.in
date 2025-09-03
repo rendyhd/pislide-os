@@ -1,0 +1,6 @@
+config BR2_PACKAGE_LUA_VIPS
+	bool "lua-vips"
+	help
+	  Lua binding for the libvips image processing library 
+
+	  https://github.com/libvips/lua-vips
