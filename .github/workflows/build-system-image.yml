@@ -10,7 +10,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        system: [pi0, pi0v2, pi1, pi2, pi3, pi4, pi5]
+        system: [pi4]
 
     runs-on: ubuntu-latest
 
@@ -57,13 +57,7 @@ jobs:
         id: vars
         run: |
           echo PISLIDE_ARCH=$(echo '{ 
-          "pi0": "pi/0", 
-          "pi0v2" : "pi/0v2",
-          "pi1": "pi/1",
-          "pi2": "pi/2",
-          "pi3": "pi/3x64", 
-          "pi4": "pi/4",
-          "pi5": "pi/5"
+          "pi4": "pi/4"
           }'  | jq -r 'to_entries[] | select(.key=="${{ matrix.system }}") | .value') >> $GITHUB_ENV
 
       - name: Apply Custom Patches on Buildroot
