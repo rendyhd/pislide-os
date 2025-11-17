@@ -5,7 +5,7 @@ After=mnt-photos.mount
 [Service]
 Type=simple
 Environment=DISPLAY_ERROR_ON_SCREEN=1 CACHE_DIR=/mnt/photos/_cache
-ExecStart=/bin/sh -c "cd /mnt/photos && rayimg \"$(cat active_slideshow.txt)\""
+ExecStart=/bin/sh -c "cd /mnt/photos && cat active_slideshow.txt | xargs -d '\\n' rayimg"
 Restart=always
-RestartSec=12
+RestartSec=0
 TimeoutStartSec=infinity

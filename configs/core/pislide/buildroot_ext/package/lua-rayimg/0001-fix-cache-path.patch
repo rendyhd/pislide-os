@@ -1,0 +1,20 @@
+--- a/src/rayimg/imageloader/imageloader.tl
++++ b/src/rayimg/imageloader/imageloader.tl
+@@ -77,7 +77,7 @@
+     local loaded_image: imageinterface.LoadedImage = {}
+
+     if cache_directory ~= nil then
+-        local cache_location = path.abs(cache_directory) .. filepath .. ".jpg"
++        local cache_location = path.abs(cache_directory) .. "/" .. filepath .. ".jpg"
+         if path.isfile(cache_location) then
+             print("Loading from cache", cache_location)
+             texture = rl.LoadTexture(cache_location)
+@@ -96,7 +96,7 @@
+         texture = rl.LoadTextureFromImage(loaded_image.image)
+
+         if cache_directory ~= nil and loaded_image.should_cache then
+-            local cache_file = path.abs(cache_directory) .. filepath .. ".jpg"
++            local cache_file = path.abs(cache_directory) .. "/" .. filepath .. ".jpg"
+             local cache_file_dir = path.parent(cache_file)
+             fs.makedirs(cache_file_dir)
+             rl.ExportImage(loaded_image.image, cache_file)
