@@ -1,5 +1,5 @@
---- a/rayimg/src/rayimg/imageloader/imageloader.tl
-+++ b/rayimg/src/rayimg/imageloader/imageloader.tl
+--- a/src/rayimg/imageloader/imageloader.tl
++++ b/src/rayimg/imageloader/imageloader.tl
 @@ -77,7 +77,7 @@
      local loaded_image: imageinterface.LoadedImage = {}
 
