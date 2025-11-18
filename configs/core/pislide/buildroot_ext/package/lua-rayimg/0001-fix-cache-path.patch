@@ -1,8 +1,8 @@
---- a/rayimg/src/rayimg/imageloader/imageloader.tl
-+++ b/rayimg/src/rayimg/imageloader/imageloader.tl
+--- a/rayimg/src/rayimg/imageloader/imageloader.tl	2025-11-18 08:32:05.764026420 +0000
++++ b/rayimg/src/rayimg/imageloader/imageloader.tl	2025-11-18 08:32:09.062054210 +0000
 @@ -67,7 +67,7 @@
      local loaded_image: imageinterface.LoadedImage = {}
-
+     
      if cache_directory ~= nil then
 -        local cache_location = path.abs(cache_directory) .. filepath .. ".jpg"
 +        local cache_location = path.abs(cache_directory) .. "/" .. filepath .. ".jpg"
@@ -11,7 +11,7 @@
              texture = rl.LoadTexture(cache_location)
 @@ -88,7 +88,7 @@
          texture = rl.LoadTextureFromImage(loaded_image.image)
-
+         
          if cache_directory ~= nil and loaded_image.should_cache then
 -            local cache_file = path.abs(cache_directory) .. filepath .. ".jpg"
 +            local cache_file = path.abs(cache_directory) .. "/" .. filepath .. ".jpg"
