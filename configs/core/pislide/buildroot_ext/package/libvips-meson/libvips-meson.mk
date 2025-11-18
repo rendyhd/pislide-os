@@ -39,17 +39,17 @@ LIBVIPS_MESON_CONF_OPTS += -Dintrospection=disabled
 endif
 
 ifeq ($(BR2_PACKAGE_IMAGEMAGICK),y)
-LIBVIPS_CONF_OPTS += \
+LIBVIPS_MESON_CONF_OPTS += \
 	-Dmagick=enabled \
 	-Dmagick-package=MagickCore
-LIBVIPS_DEPENDENCIES += imagemagick
+LIBVIPS_MESON_DEPENDENCIES += imagemagick
 else ifeq ($(BR2_PACKAGE_GRAPHICSMAGICK),y)
-LIBVIPS_CONF_OPTS += \
+LIBVIPS_MESON_CONF_OPTS += \
 	-Dmagick=enabled \
 	-Dmagick-package=GraphicsMagick
-LIBVIPS_DEPENDENCIES += graphicsmagick
+LIBVIPS_MESON_DEPENDENCIES += graphicsmagick
 else
-LIBVIPS_CONF_OPTS += -Dmagick=disabled
+LIBVIPS_MESON_CONF_OPTS += -Dmagick=disabled
 endif
 
 ifeq ($(BR2_PACKAGE_JPEG),y)
