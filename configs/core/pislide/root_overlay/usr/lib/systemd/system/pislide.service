@@ -1,11 +1,18 @@
 [Unit]
 Description=Start the Slideshow Service
-After=mnt-photos.mount
+After=local-fs.target network.target
+ConditionPathExists=/mnt/photos
+ConditionPathExists=/mnt/photos/active_slideshow.txt
 
 [Service]
 Type=simple
 Environment=DISPLAY_ERROR_ON_SCREEN=1 CACHE_DIR=/mnt/photos/_cache
-ExecStart=/bin/sh -c "cd /mnt/photos && cat active_slideshow.txt | xargs -d '\\n' rayimg"
-Restart=always
-RestartSec=3
-TimeoutStartSec=infinity
+WorkingDirectory=/mnt/photos
+ExecStart=/bin/sh -c "cat active_slideshow.txt | xargs -d '\\n' rayimg"
+Restart=on-failure
+RestartSec=5
+StartLimitBurst=3
+StartLimitIntervalSec=60
+
+[Install]
+WantedBy=multi-user.target
