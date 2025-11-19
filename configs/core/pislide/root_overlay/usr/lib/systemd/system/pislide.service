@@ -7,5 +7,5 @@ Type=simple
 Environment=DISPLAY_ERROR_ON_SCREEN=1 CACHE_DIR=/mnt/photos/_cache
 ExecStart=/bin/sh -c "cd /mnt/photos && cat active_slideshow.txt | xargs -d '\\n' rayimg"
 Restart=always
-RestartSec=0
+RestartSec=3
 TimeoutStartSec=infinity
